@@ -1,11 +1,5 @@
-import React from 'react';
+import styles from "./Header.module.css";
 
-const Header = () => {
-  return (
-    <header>
-      <h1>TodoApp</h1>
-    </header>
-  );
-};
-
-export default Header;
+export const Header = ({ title }) => {
+    return <h1 className={styles["header"]}>{title}</h1>;
+  };

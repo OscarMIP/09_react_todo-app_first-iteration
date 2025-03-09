@@ -1,26 +1,18 @@
-import React from 'react';
+import styles from "./ItemCard.module.css";
 
-const ItemCard = ({ item }) => {
-  const getStatusStyle = (status) => {
-    switch (status) {
-      case 'done':
-        return { textDecoration: 'line-through', color: 'green' };
-      case 'in progress':
-        return { fontWeight: 'bold', color: 'blue' };
-      case 'pending':
-        return { fontWeight: 'normal', color: 'grey' };
-      default:
-        return { fontWeight: 'normal', color: 'black' };
-    }
-  };
+export const ItemCard = ({ title, description, status }) => {
 
-  return (
-    <li>
-      <h4 style={getStatusStyle(item.status)}>{item.title}</h4>
-      <p>{item.description}</p>
-      <span style={{ color: getStatusStyle(item.status).color }}>{item.status}</span>
-    </li>
-  );
-};
+    const statusClass = status === "pending" 
+    ? styles.pending 
+    : status === "in progress"
+    ? styles.inProgress 
+    : styles.done;
 
-export default ItemCard;
+    return (
+        <div className={styles["item-card"]}>
+        <h4 className={styles["item-card-title"]}>{title}</h4>
+        <p className={styles["item-card-description"]}>{description}</p>
+        <p className={`${styles["item-card-status"]} ${statusClass}`}>{status.toUpperCase()}</p>
+        </div>
+    );
+}

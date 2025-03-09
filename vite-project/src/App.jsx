@@ -1,24 +1,27 @@
-import React from 'react';
-import Header from './Header';
-import Subheader from './Subheader';
-import ListContainer from './ListContainer';
+import "./App.module.css";
+import { Header } from "./Header";
+import { HeaderWrapper } from "./HeaderWrapper";
+import { ItemCard } from "./ItemCard";
+import { ListHeader } from "./ListHeader";
+import { Subheader } from "./Subheader";
+import { ListContainer } from "./ListContainer";
+import { ItemsList } from "./ItemsList";
+import { taskList } from "./taskList";
 
-const itemsData = [
-  { title: 'Buy Groceries', description: 'Need to buy milk, eggs, and bread.', status: 'in progress' },
-  { title: 'Walk the Dog', description: 'Take Sparky for a walk in the park.', status: 'done' },
-  { title: 'Finish Project', description: 'Complete the React project for work.', status: 'pending' }
-];
-
-const App = () => {
+function App() {
   return (
     <div>
-      <Header />
-      <Subheader subtitle="Todo List Manager" />
-      <ListContainer headerContent="Todo List" itemsList={itemsData} />
-      {/* Otros componentes y contenido */}
+      <HeaderWrapper> 
+        <Header title="TodoApp" />
+        <Subheader subtitle="Todo List Manager" />
+        <ListHeader content="Todo List" />
+      </HeaderWrapper>
+      <ListContainer>
+        <ItemsList itemsList={taskList}/>
+      </ListContainer>
     </div>
-  );
-};
+  ); 
+}
 
 export default App;
 

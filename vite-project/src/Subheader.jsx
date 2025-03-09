@@ -1,11 +1,6 @@
-import React from 'react';
+import styles from "./Subheader.module.css";
 
-const Subheader = ({ subtitle }) => {
-  return (
-    <header>
-      <h2>{subtitle}</h2>
-    </header>
-  );
+export function Subheader({ subtitle}) {
+    
+    return <h2 className={styles}>{subtitle}</h2>;
 };
-
-export default Subheader;

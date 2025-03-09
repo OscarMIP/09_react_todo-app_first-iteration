@@ -1,11 +1,5 @@
-import React from 'react';
+import styles from "./ListHeader.module.css";
 
-const ListHeader = ({ content }) => {
-  return (
-    <header>
-      <h3>{content}</h3>
-    </header>
-  );
+export function ListHeader({ content }) {
+  return <h3 className={styles}>{content}</h3>;
 };
-
-export default ListHeader;

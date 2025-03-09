@@ -1,14 +1,5 @@
-import React from 'react';
-import ListHeader from './ListHeader';
-import ItemsList from './ItemsList';
+import styles from "./ListContainer.module.css";
 
-const ListContainer = ({ headerContent, itemsList }) => {
-  return (
-    <div>
-      <ListHeader content={headerContent} />
-      <ItemsList itemsList={itemsList} />
-    </div>
-  );
-};
-
-export default ListContainer;
+export const ListContainer = ({ children }) =>{
+    return <div className={styles["list-container"]}>{children}</div>;
+}
